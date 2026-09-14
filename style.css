@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #f4ead2;
+  --paper-shade: #e8d9b0;
+  --kraft: #cbb27c;
+  --ink: #2b241c;
+  --ink-soft: #6b5d46;
+  --line: #b79b5b;
+  --stamp: #b3402c;
+  --stamp-dark: #8f3020;
+  --ink-green: #3f6b41;
+  --ink-red: #9c3226;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  color: var(--ink);
+  background-color: var(--kraft);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.02) 0px,
+    rgba(0, 0, 0, 0.02) 2px,
+    transparent 2px,
+    transparent 7px
+  );
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: "Special Elite", "Courier New", monospace;
+  font-weight: 400;
+  color: var(--ink);
+  text-align: center;
+  font-size: 1.9em;
+  letter-spacing: 0.3px;
+  margin: 40px auto 24px;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 60px 34px 34px;
+  background-color: var(--paper);
+  clip-path: polygon(0 42px, 50% 0, 100% 42px, 100% 100%, 0 100%);
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.28));
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--line);
+  opacity: 0.7;
+}
+
+label,
+legend {
+  font-weight: 600;
+  font-size: 0.92em;
+  color: var(--ink-soft);
+}
+
+legend {
+  font-family: "Special Elite", "Courier New", monospace;
+  font-weight: 400;
+  font-size: 1em;
+  color: var(--ink);
+  padding: 0 2px 6px;
+  letter-spacing: 0.2px;
+}
+
+fieldset {
+  border: none;
+  border-top: 2px dashed var(--line);
+  padding: 16px 2px 4px;
+  margin: 26px 0 0;
+}
+
+fieldset#rent {
+  margin-top: 22px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.input-container label {
+  margin-top: 6px;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  background-color: #fffdf6;
+  min-height: 34px;
+  width: 100%;
+}
+
+input[type="number"] {
+  font-family: "Courier New", "Special Elite", monospace;
+  letter-spacing: 0.3px;
+}
+
+select {
+  width: auto;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 1px;
+  border-color: var(--stamp);
+}
+
+button {
+  width: auto;
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background-color: transparent;
+  color: var(--ink-soft);
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--paper-shade);
+  color: var(--ink);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+form > div:last-child {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+button[type="submit"] {
+  flex: 1;
+  background-color: var(--stamp);
+  border: 1px solid var(--stamp-dark);
+  color: #fff8ec;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 11px 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--stamp-dark);
+}
+
+#clear {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#clear:hover {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+#add-entry {
+  border-style: dashed;
+  background-color: transparent;
+}
+
+.controls {
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
+
+.controls span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  margin: 0;
+}
+
+.output {
+  width: 90%;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  border-top: 2px dashed var(--line);
+  padding: 20px 10px 4px;
+  text-align: center;
+  background-color: transparent;
+  color: var(--ink);
+}
+
+.output span {
+  font-family: "Courier New", "Special Elite", monospace;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.output p {
+  font-family: "Courier New", "Special Elite", monospace;
+  margin: 6px 0;
+}
+
+.surplus {
+  color: var(--ink-green);
+}
+
+.deficit {
+  color: var(--ink-red);
+}
+
+.hide {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 52px 20px 26px;
+  }
+
+  .controls span {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form > div:last-child {
+    flex-direction: column;
+  }
+
+  button,
+  input,
+  select {
+    width: 100%;
+  }
+}
